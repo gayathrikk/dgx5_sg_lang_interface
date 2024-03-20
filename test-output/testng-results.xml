@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-20T11:21:20 IST" name="Default suite" finished-at="2024-03-20T11:21:21 IST" duration-ms="774">
+  <suite started-at="2024-03-20T11:54:25 IST" name="Default suite" finished-at="2024-03-20T11:54:25 IST" duration-ms="730">
     <groups>
     </groups>
-    <test started-at="2024-03-20T11:21:20 IST" name="Default test" finished-at="2024-03-20T11:21:21 IST" duration-ms="774">
-      <class name="com.test.DockerStatusTest.Apollo2_liveweb_Docker">
-        <test-method signature="Live_Web_Status()[pri:1, instance:com.test.DockerStatusTest.Apollo2_liveweb_Docker@7fee8714]" started-at="2024-03-20T11:21:20 IST" name="Live_Web_Status" finished-at="2024-03-20T11:21:21 IST" duration-ms="752" status="PASS">
+    <test started-at="2024-03-20T11:54:25 IST" name="Default test" finished-at="2024-03-20T11:54:25 IST" duration-ms="730">
+      <class name="com.test.DockerStatusTest.Apollo2_mysql_Docker">
+        <test-method signature="MySql_DB_Status()[pri:1, instance:com.test.DockerStatusTest.Apollo2_mysql_Docker@7fee8714]" started-at="2024-03-20T11:54:25 IST" name="MySql_DB_Status" finished-at="2024-03-20T11:54:25 IST" duration-ms="705" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Live_Web_Status -->
-      </class> <!-- com.test.DockerStatusTest.Apollo2_liveweb_Docker -->
+        </test-method> <!-- MySql_DB_Status -->
+      </class> <!-- com.test.DockerStatusTest.Apollo2_mysql_Docker -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
