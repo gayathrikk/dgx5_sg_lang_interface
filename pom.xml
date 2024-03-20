@@ -75,7 +75,7 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.0.0-M5</version>
           <configuration>
-            <test>com.test.DockerStatusTest.IITM_liveweb_Docker</test>
+            <test>com.test.DockerStatusTest.IITM_iipsrv_Docker</test>
           </configuration>
         </plugin>
       </plugins>
