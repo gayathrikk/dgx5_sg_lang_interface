@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-20T11:09:54 IST" name="Default suite" finished-at="2024-03-20T11:09:55 IST" duration-ms="729">
+  <suite started-at="2024-03-20T11:21:20 IST" name="Default suite" finished-at="2024-03-20T11:21:21 IST" duration-ms="774">
     <groups>
     </groups>
-    <test started-at="2024-03-20T11:09:54 IST" name="Default test" finished-at="2024-03-20T11:09:55 IST" duration-ms="729">
-      <class name="com.test.DockerStatusTest.Apollo2_jenkins_Docker">
-        <test-method signature="Jenkins_Status()[pri:1, instance:com.test.DockerStatusTest.Apollo2_jenkins_Docker@7fee8714]" started-at="2024-03-20T11:09:54 IST" name="Jenkins_Status" finished-at="2024-03-20T11:09:55 IST" duration-ms="707" status="PASS">
+    <test started-at="2024-03-20T11:21:20 IST" name="Default test" finished-at="2024-03-20T11:21:21 IST" duration-ms="774">
+      <class name="com.test.DockerStatusTest.Apollo2_liveweb_Docker">
+        <test-method signature="Live_Web_Status()[pri:1, instance:com.test.DockerStatusTest.Apollo2_liveweb_Docker@7fee8714]" started-at="2024-03-20T11:21:20 IST" name="Live_Web_Status" finished-at="2024-03-20T11:21:21 IST" duration-ms="752" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Jenkins_Status -->
-      </class> <!-- com.test.DockerStatusTest.Apollo2_jenkins_Docker -->
+        </test-method> <!-- Live_Web_Status -->
+      </class> <!-- com.test.DockerStatusTest.Apollo2_liveweb_Docker -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
