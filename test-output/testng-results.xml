@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-20T15:44:50 IST" name="Default suite" finished-at="2024-03-20T15:44:51 IST" duration-ms="718">
+  <suite started-at="2024-03-20T16:29:13 IST" name="Default suite" finished-at="2024-03-20T16:29:14 IST" duration-ms="710">
     <groups>
     </groups>
-    <test started-at="2024-03-20T15:44:50 IST" name="Default test" finished-at="2024-03-20T15:44:51 IST" duration-ms="718">
-      <class name="com.test.DockerStatusTest.Apollo2_phpmyadmin_Docker">
-        <test-method signature="phpMyAdmin_Status()[pri:1, instance:com.test.DockerStatusTest.Apollo2_phpmyadmin_Docker@7fee8714]" started-at="2024-03-20T15:44:50 IST" name="phpMyAdmin_Status" finished-at="2024-03-20T15:44:51 IST" duration-ms="698" status="PASS">
+    <test started-at="2024-03-20T16:29:13 IST" name="Default test" finished-at="2024-03-20T16:29:14 IST" duration-ms="710">
+      <class name="com.test.DockerStatusTest.Colab_liveweb_Docker">
+        <test-method signature="stagin_web_Status()[pri:1, instance:com.test.DockerStatusTest.Colab_liveweb_Docker@7fee8714]" started-at="2024-03-20T16:29:13 IST" name="stagin_web_Status" finished-at="2024-03-20T16:29:14 IST" duration-ms="688" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- phpMyAdmin_Status -->
-      </class> <!-- com.test.DockerStatusTest.Apollo2_phpmyadmin_Docker -->
+        </test-method> <!-- stagin_web_Status -->
+      </class> <!-- com.test.DockerStatusTest.Colab_liveweb_Docker -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
