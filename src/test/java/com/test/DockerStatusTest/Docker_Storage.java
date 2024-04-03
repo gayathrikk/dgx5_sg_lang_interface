@@ -15,7 +15,7 @@ public class Docker_Storage {
 	        try {
 	            // Replace these with your SSH server details
 	            String user = "hbp";
-	            String host = "ap6.humanbrain.in";
+	            String host = "ap3.humanbrain.in";
 	            String password = "Health#123";
 	            int port = 22;
 	            
@@ -27,7 +27,7 @@ public class Docker_Storage {
 	            
 	            // Execute command on SSH server
 	            Channel channel = session.openChannel("exec");
-	            ((ChannelExec) channel).setCommand(" df -h /store/repos1"); // Command to retrieve storage details for /dev/mapper devices
+	            ((ChannelExec) channel).setCommand("df -h /dev/sda1"); // Command to retrieve storage details for /dev/mapper devices
 	            channel.setInputStream(null);
 	            ((ChannelExec) channel).setErrStream(System.err);
 
@@ -55,14 +55,14 @@ public class Docker_Storage {
 	            
 	            // Parse and format output as table
 	            String[] lines = output.toString().split("\n");
-	            System.out.println("+----------------------------------+------+------+-------+--------+---------------+");
-	            System.out.println("|       Filesystem                 | Size | Used | Avail |  Use%  | Mounted on    |");
-	            System.out.println("+----------------------------------+------+------+-------+--------+---------------+");
+	            System.out.println("+--------------------+------+------+-------+--------+---------------+");
+	            System.out.println("|       Filesystem   | Size | Used | Avail |  Use%  | Mounted on    |");
+	            System.out.println("+--------------------+------+------+-------+--------+---------------+");
 	            for (int i = 1; i < lines.length; i++) {
 	                String[] parts = lines[i].trim().split("\\s+");
-	                System.out.printf("| %16s | %4s | %4s | %5s | %6s | %10s |\n", parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]);
+	                System.out.printf("| %16s   | %4s | %4s | %5s | %6s | %10s    |\n", parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]);
 	            }
-	            System.out.println("+----------------------------------+------+------+-------+--------+---------------+");
+	            System.out.println("+--------------------+------+------+-------+--------+---------------+");
 	            channel.disconnect();
 	            session.disconnect();
 
