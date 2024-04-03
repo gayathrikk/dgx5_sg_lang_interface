@@ -15,7 +15,7 @@ public class Docker_Storage {
 	        try {
 	            // Replace these with your SSH server details
 	            String user = "hbp";
-	            String host = "apollo2.humanbrain.in";
+	            String host = "ap6.humanbrain.in";
 	            String password = "Health#123";
 	            int port = 22;
 	            
@@ -27,7 +27,7 @@ public class Docker_Storage {
 	            
 	            // Execute command on SSH server
 	            Channel channel = session.openChannel("exec");
-	            ((ChannelExec) channel).setCommand("df -h |grep /dev/mapper"); // Command to retrieve storage details for /dev/mapper devices
+	            ((ChannelExec) channel).setCommand(" df -h /store/repos1"); // Command to retrieve storage details for /dev/mapper devices
 	            channel.setInputStream(null);
 	            ((ChannelExec) channel).setErrStream(System.err);
 
