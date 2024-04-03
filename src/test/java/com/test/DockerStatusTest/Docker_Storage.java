@@ -7,7 +7,6 @@ import java.io.*;
 import org.testng.annotations.Test;
 
 public class Docker_Storage {
-	
 	 @Test
 	    public void testStorageDetails() {
 	        // Set up SSH connection
@@ -28,7 +27,7 @@ public class Docker_Storage {
 	            
 	            // Execute command on SSH server
 	            Channel channel = session.openChannel("exec");
-	            ((ChannelExec) channel).setCommand("df -h"); // Command to retrieve storage details
+	            ((ChannelExec) channel).setCommand("df -h |grep /dev/mapper"); // Command to retrieve storage details for /dev/mapper devices
 	            channel.setInputStream(null);
 	            ((ChannelExec) channel).setErrStream(System.err);
 
@@ -53,7 +52,17 @@ public class Docker_Storage {
 	                } catch (Exception ee) {
 	                }
 	            }
-	            System.out.println(output.toString());
+	            
+	            // Parse and format output as table
+	            String[] lines = output.toString().split("\n");
+	            System.out.println("+----------------------------------+------+------+-------+--------+---------------+");
+	            System.out.println("|       Filesystem                 | Size | Used | Avail |  Use%  | Mounted on    |");
+	            System.out.println("+----------------------------------+------+------+-------+--------+---------------+");
+	            for (int i = 1; i < lines.length; i++) {
+	                String[] parts = lines[i].trim().split("\\s+");
+	                System.out.printf("| %16s | %4s | %4s | %5s | %6s | %10s |\n", parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]);
+	            }
+	            System.out.println("+----------------------------------+------+------+-------+--------+---------------+");
 	            channel.disconnect();
 	            session.disconnect();
 
