@@ -12,17 +12,17 @@ import java.util.Properties;
 public class sg_lang_interface {
 
     @Test(priority = 1)
-    public void sg_lang_interface() {
+    public void sg_lang_interface_Status() {
 
         String vmIpAddress = "172.20.23.157";
         String username = "appUser";
         String password = "Brain@123";
-        String containerId = "831bb1d2ded4";
+        String containerName = "postgres_postgis";  // ✅ use docker name
 
-        System.out.println("sg_lang_interface Docker ID = " + containerId);
+        System.out.println("sg_lang_interface Docker Name = " + containerName);
 
-        if (containerId.isEmpty()) {
-            System.out.println("Container ID is required.");
+        if (containerName.isEmpty()) {
+            System.out.println("Container name is required.");
             return;
         }
 
@@ -33,9 +33,9 @@ public class sg_lang_interface {
             session.setConfig("StrictHostKeyChecking", "no");
             session.connect();
 
-            // Execute the docker inspect command to check the container's status
+            // ✅ Inspect container by name instead of ID
             ChannelExec channel = (ChannelExec) session.openChannel("exec");
-            channel.setCommand("docker inspect --format='{{.State.Status}}' " + containerId);
+            channel.setCommand("docker inspect --format='{{.State.Status}}' " + containerName);
             channel.setInputStream(null);
             channel.setErrStream(System.err);
             BufferedReader reader = new BufferedReader(new InputStreamReader(channel.getInputStream()));
@@ -56,7 +56,7 @@ public class sg_lang_interface {
 
             // If container is not running, send alert
             if (!isRunning) {
-                sendEmailAlert("Hi,\n\n🚨 This is sg_lang_interface Docker. I am currently down. Kindly restart the container at your earliest convenience.");
+                sendEmailAlert("Hi,\n\n🚨 This is `postgres_postgis` (sg_lang_interface) Docker. I am currently down. Kindly restart the container at your earliest convenience.");
                 assert false : "Container is not in the expected state.";
             }
 
@@ -82,7 +82,7 @@ public class sg_lang_interface {
             "gayathri@htic.iitm.ac.in"
         };
 
-        String subject = "Docker Container Alert - sg_lang_interface";
+        String subject = "Docker Container Alert - postgres_postgis (sg_lang_interface)";
         final String username = "automationsoftware25@gmail.com";
         final String password = "wjzcgaramsqvagxu"; // App-specific password
 
@@ -122,4 +122,3 @@ public class sg_lang_interface {
         }
     }
 }
-
