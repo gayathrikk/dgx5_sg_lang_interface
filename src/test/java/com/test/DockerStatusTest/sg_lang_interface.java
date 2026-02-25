@@ -15,8 +15,8 @@ public class sg_lang_interface {
     public void sg_lang_interface_Status() {
 
         String vmIpAddress = "172.20.23.157";
-        String username = "appUser";
-        String password = "Brain@123";
+        String username = "hbp";
+        String password = "hbpsgbclab@123";
         String containerName = "postgres_postgis";  // ✅ use docker name
 
         System.out.println("sg_lang_interface Docker Name = " + containerName);
@@ -122,3 +122,4 @@ public class sg_lang_interface {
         }
     }
 }
+
